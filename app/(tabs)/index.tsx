@@ -32,7 +32,7 @@ const NoticiasScreen = () => {
 
           </Image>
           <Text style={Styles.textNoticias}> MEC aciona PF e anula três questões do segundo dia do Enem</Text>
-          <Text> Medida foi adotada após relatos nas redes sociais sugerirem a
+          <Text style={Styles.oneNoticiap}> Medida foi adotada após relatos nas redes sociais sugerirem a
             antecipação de questões semelhantes às aplicadas no segundo dia do
             exame.</Text>
         </View>
@@ -44,7 +44,7 @@ const NoticiasScreen = () => {
           </Image>
           <Text style={Styles.textNoticias}> Novo vazamento na Baía de Guanabara abre caminho para canal de
             denúncia online</Text>
-          <Text>Um novo vazamento de óleo ocorrido na tarde deste domingo, em São
+          <Text style={Styles.oneNoticiap}>Um novo vazamento de óleo ocorrido na tarde deste domingo, em São
             Gonçalo (RJ), trouxe à tona a necessidade de um canal participativo
             de denúncias online para identificar responsáveis por vazamentos de
             óleo nas baías fluminenses (Guanabara, Sepetiba e da Ilha Grande).</Text>
@@ -104,12 +104,17 @@ const Styles = StyleSheet.create({
   },
 
   oneNoticiap: {
-
-
+    fontSize: 0.9,
+    color:"grey",
+    marginBottom: 0
   },
 
   twoNoticia:{
-     backgroundColor: "light grey"
+     backgroundColor: "white",
+     padding: 15,
+     borderRadius: 8,
+     boxShadow:'0 2px 4px rgba(243, 7, 7, 0.05',
+     textAlign:"justify"
 
   },
 
@@ -123,11 +128,8 @@ const Styles = StyleSheet.create({
 
   textfooter:{
     color: "light grey"
-  },
-
-  textNoticias:{
-    fontWeight:'bold'
   }
+
 });
 
 
