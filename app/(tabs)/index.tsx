@@ -15,12 +15,13 @@ const NoticiasScreen = () => {
         </View>
         <View style={Styles.oneNoticia}>
           <Image
-            source={require("./assets/img/IMG_5496-1024x761.jpg")}>
+            source={require("../assets/img/IMG_5496-1024x761.jpg")}
+            style={Styles.imgNoticias}>
 
           </Image>
           <Text style={Styles.textNoticias}> Novo vazamento na Baía de Guanabara abre caminho para canal de
             denúncia online</Text>
-          <Text style={Styles.oneNoticiap}>Um novo vazamento de óleo ocorrido na tarde deste domingo, em São
+          <Text style={Styles.Noticiap}>Um novo vazamento de óleo ocorrido na tarde deste domingo, em São
             Gonçalo (RJ), trouxe à tona a necessidade de um canal participativo
             de denúncias online para identificar responsáveis por vazamentos de
             óleo nas baías fluminenses (Guanabara, Sepetiba e da Ilha Grande).</Text>
@@ -28,23 +29,25 @@ const NoticiasScreen = () => {
 
         <View style={Styles.twoNoticia}>
           <Image
-            source={require("./assets/img/1_enem-1-60987139.webp")}>
+            source={require("../assets/img/1_enem-1-60987139.webp")}
+            style={Styles.imgNoticias}>
 
           </Image>
           <Text style={Styles.textNoticias}> MEC aciona PF e anula três questões do segundo dia do Enem</Text>
-          <Text style={Styles.oneNoticiap}> Medida foi adotada após relatos nas redes sociais sugerirem a
+          <Text style={Styles.Noticiap}> Medida foi adotada após relatos nas redes sociais sugerirem a
             antecipação de questões semelhantes às aplicadas no segundo dia do
             exame.</Text>
         </View>
 
         <View style={Styles.threeNoticia}>
           <Image
-            source={require("./assets/img/paqueta-censo-2022090620210064.webp")} >
+            source={require("../assets/img/paqueta-censo-2022090620210064.webp")} 
+            style={Styles.imgNoticias}>
 
           </Image>
           <Text style={Styles.textNoticias}> Novo vazamento na Baía de Guanabara abre caminho para canal de
             denúncia online</Text>
-          <Text style={Styles.oneNoticiap}>Um novo vazamento de óleo ocorrido na tarde deste domingo, em São
+          <Text style={Styles.Noticiap}>Um novo vazamento de óleo ocorrido na tarde deste domingo, em São
             Gonçalo (RJ), trouxe à tona a necessidade de um canal participativo
             de denúncias online para identificar responsáveis por vazamentos de
             óleo nas baías fluminenses (Guanabara, Sepetiba e da Ilha Grande).</Text>
@@ -103,7 +106,7 @@ const Styles = StyleSheet.create({
     color: "Red"
   },
 
-  oneNoticiap: {
+  Noticiap: {
     fontSize: 0.9,
     color:"grey",
     marginBottom: 0
@@ -128,6 +131,14 @@ const Styles = StyleSheet.create({
 
   textfooter:{
     color: "light grey"
+  },
+
+  imgNoticias :{
+    width: 100,
+    height: 180,
+    objectFit: "cover",
+    borderRadius: 6,
+    marginBottom: 10
   }
 
 });
