@@ -1,98 +1,135 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+// import ParallaxScrollView from "@/app-example/components/parallax-scroll-view";
+import React from "react";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
-
-export default function HomeScreen() {
+const NoticiasScreen = () => {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+    <ScrollView>
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+      <View style={Styles.body}>
+        <View style={Styles.header}>
+          <Text style={Styles.Cabecalho}>Portal de Notícias</Text>
+          <Text style={Styles.Cabecalho}>Pagina inicial</Text>
+          <Text style={Styles.Cabecalho}>Contato</Text>
+          <Text style={Styles.Cabecalho}>Notícias</Text>
+        </View>
+        <View style={Styles.oneNoticia}>
+          <Image
+            source={require("./assets/img/IMG_5496-1024x761.jpg")}>
+
+          </Image>
+          <Text style={Styles.textNoticias}> Novo vazamento na Baía de Guanabara abre caminho para canal de
+            denúncia online</Text>
+          <Text style={Styles.oneNoticiap}>Um novo vazamento de óleo ocorrido na tarde deste domingo, em São
+            Gonçalo (RJ), trouxe à tona a necessidade de um canal participativo
+            de denúncias online para identificar responsáveis por vazamentos de
+            óleo nas baías fluminenses (Guanabara, Sepetiba e da Ilha Grande).</Text>
+        </View>
+
+        <View style={Styles.twoNoticia}>
+          <Image
+            source={require("./assets/img/1_enem-1-60987139.webp")}>
+
+          </Image>
+          <Text style={Styles.textNoticias}> MEC aciona PF e anula três questões do segundo dia do Enem</Text>
+          <Text> Medida foi adotada após relatos nas redes sociais sugerirem a
+            antecipação de questões semelhantes às aplicadas no segundo dia do
+            exame.</Text>
+        </View>
+
+        <View style={Styles.threeNoticia}>
+          <Image
+            source={require("./assets/img/paqueta-censo-2022090620210064.webp")} >
+
+          </Image>
+          <Text style={Styles.textNoticias}> Novo vazamento na Baía de Guanabara abre caminho para canal de
+            denúncia online</Text>
+          <Text>Um novo vazamento de óleo ocorrido na tarde deste domingo, em São
+            Gonçalo (RJ), trouxe à tona a necessidade de um canal participativo
+            de denúncias online para identificar responsáveis por vazamentos de
+            óleo nas baías fluminenses (Guanabara, Sepetiba e da Ilha Grande).</Text>
+        </View>
+        <View style={Styles.footer}>
+          <Text style={Styles.textfooter}> @anna.souza 2025-11-26 NewsLinks</Text>
+        </View>
+      </View>
+    </ScrollView>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+
+const Styles = StyleSheet.create({
+  body:{
+     backgroundColor: "light grey",
+     fontFamily: "Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif",
+     margin: 0,
+     padding: 0,
+     boxSizing: "border-box",
+     lineHeight: 1.6
+    },
+
+  header:{
+     backgroundColor: "red",
+     color: "write",
+     padding: 5,
+     boxShadow:'0 4px 6px rgba(0,0,0,0.1)',
+     top: 0,
+     zIndex: 1000,
+     flexDirection:"row",
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+
+  Cabecalho:{
+     backgroundColor: "light grey",
+     maxWidth: 1200,
+     margin: 0,
+     padding: 20,
+     
+     justifyContent: "space-between",
+     alignItems: "center",
+     flexWrap: "wrap" 
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+
+  oneNoticia:{
+     backgroundColor: "white",
+     padding: 15,
+     borderRadius: 8,
+     boxShadow:'0 2px 4px rgba(243, 7, 7, 0.05',
+     textAlign:"justify"
   },
+
+  textNoticias:{
+    fontWeight:'bold',
+    fontSize: 1.3,
+    color: "Red"
+  },
+
+  oneNoticiap: {
+
+
+  },
+
+  twoNoticia:{
+     backgroundColor: "light grey"
+
+  },
+
+  threeNoticia:{
+    backgroundColor: "light grey"
+  },
+
+  footer:{
+    backgroundColor: "light grey"
+  },
+
+  textfooter:{
+    color: "light grey"
+  },
+
+  textNoticias:{
+    fontWeight:'bold'
+  }
 });
+
+
+
+export default NoticiasScreen;
